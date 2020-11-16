@@ -7,6 +7,7 @@
 #define OUTFILE "numbers.out"
 
 int main() {
+    int i;
     int fin = open("/dev/random",O_RDONLY);
     if(fin == -1) {
         printf("error: %s\n",strerror(errno));
@@ -26,7 +27,7 @@ int main() {
         return 1;
     }
 
-    for(int i = 0; i < SIZE; i++) {
+    for(i = 0; i < SIZE; i++) {
         printf("%15d at index %d\n",nums[i],i);
     }
 
@@ -61,7 +62,7 @@ int main() {
     }
 
     printf("\nVerification that written numbers are the same\n");
-    for(int i = 0; i < SIZE; i++) {
+    for(i = 0; i < SIZE; i++) {
         printf("%15d at index %d\n",nums[i],i);
     }
 
